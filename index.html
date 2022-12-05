@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <meta charset="UTF-8" />
+
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <title> </title>
+  </head>
+
+  <body class="body">
+    <h1>Prepayment Loan Calculator</h1>
+
+    <p>
+      This is a loan prepayment calculator based on the 5-4-3-2-1 prepayment
+      method. If your principal payment is greater than 20% of the original loan
+      amount you will be charged a prepayment penalty.
+    </p>
+    <label for="loanvalue">What is the current loan amount?</label><br />
+
+    <input
+      type="number"
+      id="loanvalue"
+      name="loanvalue"
+      class="loaninput"
+    /><br /><br />
+
+    <label for="loanage" class="loanage"
+      >How many years have you had the loan? 1, 2, 3, 4, 5+?</label
+    ><br />
+
+    <input
+      type="number"
+      id="loanage"
+      name="loanage"
+      class="loanageinput"
+    /><br /><br />
+
+    <label for="prepaymentamnt"
+      >What is your principal payment amount for this loan(in $$)?</label
+    ><br />
+
+    <input
+      type="number"
+      id="prepaymentamnt"
+      name="prepaymentamnt"
+      class="prepaymentinput"
+    /><br /><br />
+    <button id="submitbutton">SUBMIT</button><br /><br />
+
+    <label for="returnparagraph">Pre Payment Penalty: </label><br /><br />
+    <div id="container1">
+      <p id="returnparagraph"></p>
+    </div>
+
+    <script>
+      document
+        .getElementById("submitbutton")
+        .addEventListener("click", prePayment);
+      function prePayment() {
+        const l = Number(document.getElementById("loanvalue").value);
+        const y = Number(document.getElementById("loanage").value);
+        const p = Number(document.getElementById("prepaymentamnt").value);
+        const returnElement = document.getElementById("returnparagraph");
+        if (p <= l * 0.2) {
+          returnElement.innerText = `No PrePayment penalty`;
+        } else if (y >= 6) {
+          returnElement.innerText = l * 0.01;
+        } else {
+          returnElement.innerText = Math.round((0.06 - y / 100) * l);
+        }
+      }
+      // }
+    </script>
+  </body>
+</html>
+
+<!-- <p>
+  NOTE: ADD SUBMIT BUTTON, AND HAVE ANSWER DISPLAY AS A BOX, YOUTUBE VIDEO FOR
+  COOL BAckground!!
+</p> -->

@@ -1,0 +1,13 @@
+body {
+  color: rgb(250, 252, 252);
+  background-image: url(pexels-john-guccione-wwwadvergroupcom-3483098.jpg);
+  background-color: rgb(29, 168, 192);
+  background-blend-mode: color-burn;
+  text-align: center;
+}
+
+label {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif, "Times New Roman", Times, serif;
+  font-weight: 700;
+}
